@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rafzz Official</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700;900&display=swap');
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:'Noto Sans JP',Arial,sans-serif}
+body{min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;color:#f8eeee;background:radial-gradient(circle at 50% 15%,rgba(125,10,28,.2),transparent 30%),radial-gradient(circle at 10% 90%,rgba(125,10,28,.15),transparent 32%),linear-gradient(145deg,#050505,#140708 55%,#050505)}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 40%,rgba(255,255,255,.025) 50%,transparent 60%);animation:shine 8s linear infinite}
+@keyframes shine{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+.container{width:min(92%,450px);position:relative;z-index:5}
+.card{position:relative;overflow:hidden;padding:30px;border-radius:26px;background:rgba(14,11,12,.9);border:1px solid rgba(220,42,61,.28);box-shadow:0 25px 80px rgba(0,0,0,.65),0 0 45px rgba(126,10,25,.15);backdrop-filter:blur(15px)}
+.card:before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,transparent,#a51228,#f04a5d,#a51228,transparent);box-shadow:0 0 18px #a51228;animation:bar 3s linear infinite}
+@keyframes bar{0%{transform:translateX(-20%)}50%{transform:translateX(20%)}100%{transform:translateX(-20%)}}
+.brand{display:flex;align-items:center;gap:13px}
+.mark{width:52px;height:52px;border-radius:15px;display:grid;place-items:center;color:#fff;font-weight:900;font-size:19px;background:linear-gradient(145deg,#9e1025,#410711);border:1px solid rgba(255,90,110,.35);box-shadow:0 0 25px rgba(180,20,45,.28);transform:rotate(-3deg)}
+h1{margin:0;font-size:27px;letter-spacing:.04em}.jp{font-size:10px;color:#e04a5d;letter-spacing:.28em;margin-top:2px}.subtitle{color:#9c8789;font-size:13px;margin:8px 0 24px}
+label{display:block;font-size:11px;color:#bba4a6;font-weight:700;letter-spacing:.08em;margin:14px 0 7px}
+input{width:100%;padding:14px 15px;border-radius:12px;border:1px solid #392226;background:#0b090a;color:#fff;outline:none;font-size:14px;transition:.25s}
+input::placeholder{color:#67585a}
+input:focus{border-color:#c1273c;box-shadow:0 0 0 4px rgba(193,39,60,.1),0 0 20px rgba(193,39,60,.08)}
+button{width:100%;border:0;border-radius:12px;padding:14px;margin-top:12px;font-weight:800;font-size:14px;cursor:pointer;transition:.22s}
+button:hover{transform:translateY(-2px)}
+.primary{color:#fff;background:linear-gradient(135deg,#9d1127,#5b0916);border:1px solid rgba(255,70,95,.2);box-shadow:0 10px 28px rgba(120,7,25,.28)}
+.secondary{color:#e7cfd1;background:#211416;border:1px solid #4b292e}
+.copy-box{margin-top:18px;padding:13px;border-radius:12px;word-break:break-all;color:#cdbfc0;background:#0b090a;border:1px dashed #593137;font-size:12px;line-height:1.6}
+.hidden{display:none!important}
+.timer{width:130px;height:130px;border-radius:50%;margin:27px auto 18px;display:grid;place-items:center;font-size:54px;font-weight:900;color:#e33c52;background:radial-gradient(circle,#100b0c 57%,transparent 58%);border:6px solid #561923;box-shadow:0 0 0 8px #0b0809,0 0 40px rgba(183,22,48,.2);animation:pulse 1s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 8px #0b0809,0 0 55px rgba(183,22,48,.35)}}
+.status{text-align:center;color:#a28d90;font-size:13px}.note{text-align:center;color:#665457;font-size:10px;margin-top:22px;letter-spacing:.12em}
+
+/* Sakura */
+.sakura-layer{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:2}
+.petal{position:absolute;top:-30px;width:10px;height:7px;border-radius:80% 15% 80% 15%;background:#e99aaa;opacity:.72;filter:drop-shadow(0 0 5px rgba(255,70,100,.25));animation:fall linear infinite}
+@keyframes fall{0%{transform:translate3d(0,-40px,0) rotate(0)}25%{margin-left:35px}50%{transform:translate3d(-25px,50vh,0) rotate(160deg)}75%{margin-left:25px}100%{transform:translate3d(-60px,110vh,0) rotate(340deg)}}
+
+/* Popup */
+.overlay{position:fixed;inset:0;padding:20px;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.76);backdrop-filter:blur(8px);z-index:1000}
+.popup{width:min(100%,400px);background:#0d0a0b;border:1px solid #64202b;border-radius:25px;overflow:hidden;box-shadow:0 30px 90px rgba(0,0,0,.65),0 0 45px rgba(155,16,40,.18);animation:enter .3s cubic-bezier(.2,.8,.2,1)}
+@keyframes enter{from{opacity:0;transform:translateY(18px) scale(.94)}to{opacity:1;transform:none}}
+.popup-top{position:relative;padding:25px 23px 22px;color:#fff;overflow:hidden;background:linear-gradient(135deg,#510913,#9c1229 55%,#d23b50)}
+.popup-top:before{content:"";position:absolute;width:190px;height:190px;border:28px solid rgba(255,255,255,.06);border-radius:50%;right:-65px;top:-80px}
+.adtag{font-size:10px;letter-spacing:.22em;opacity:.78;font-weight:700}
+.popup-title{display:flex;align-items:center;gap:12px;margin-top:12px}
+.popup-mark{width:52px;height:52px;border-radius:15px;background:#fff;color:#a8171c;display:grid;place-items:center;font-weight:900;font-size:18px;transform:rotate(-4deg)}
+.popup h2{margin:0;font-size:24px}.popup-jp{font-size:10px;opacity:.78;letter-spacing:.2em;margin-top:2px}
+.popup-body{padding:22px}.popup-body p{font-size:13px;line-height:1.65;color:#b9a5a7;margin:0 0 16px}
+.join{display:block;text-align:center;color:#fff;text-decoration:none;background:linear-gradient(135deg,#16834a,#20a65e);box-shadow:0 10px 22px rgba(22,131,74,.18)}
+.skip{background:#211719;color:#cdbfc0;border:1px solid #4a292e}.popup-small{text-align:center;color:#806f72;font-size:10px;margin-top:13px}
+</style>
+</head>
+<body>
+
+<div class="sakura-layer" id="sakura"></div>
+
+<div class="container">
+<div class="card">
+
+<div id="generator">
+<div class="brand">
+<div class="mark">RZ</div>
+<div><h1>Rafzz Official</h1><div class="jp">ラフズ・オフィシャル</div></div>
+</div>
+<p class="subtitle">Japanese dark gateway • Simple & elegant</p>
+
+<label>NAMA LINK</label>
+<input id="linkName" type="text" placeholder="Contoh: Download APK">
+
+<label>LINK TUJUAN</label>
+<input id="targetLink" type="url" placeholder="https://contoh.com/download">
+
+<button class="primary" onclick="createLink()">Buat Link →</button>
+<div id="result"></div>
+<div class="note">Rafzz Official • 五秒のゲート</div>
+</div>
+
+<div id="cooldown" class="hidden">
+<div class="brand">
+<div class="mark">RZ</div>
+<div><h1>Rafzz Official</h1><div class="jp">お待ちください</div></div>
+</div>
+<p id="welcomeText" class="subtitle">Menyiapkan link...</p>
+<div id="timer" class="timer">5</div>
+<p id="status" class="status">Harap tunggu...</p>
+</div>
+
+</div>
+</div>
+
+<div id="adPopup" class="overlay hidden">
+<div class="popup">
+<div class="popup-top">
+<div class="adtag">PROMOTION • RAFZZ OFFICIAL</div>
+<div class="popup-title">
+<div class="popup-mark">RZ</div>
+<div><h2>Rafzz Official</h2><div class="popup-jp">ラフズ公式チャンネル</div></div>
+</div>
+</div>
+<div class="popup-body">
+<p>Join saluran <b>Rafzz Official</b> untuk mendapatkan update, APK, aplikasi, dan konten lainnya secara gratis.</p>
+<a class="join" href="https://whatsapp.com/channel/0029Vb75VQWA2pL9MTcaeQ31" target="_blank"><button class="join">✦ JOIN SALURAN</button></a>
+<button class="skip" onclick="skipAd()">Lewati Iklan →</button>
+<div class="popup-small">Kamu tetap dapat melanjutkan tanpa bergabung.</div>
+</div>
+</div>
+</div>
+
+<script>
+const channelLink="https://whatsapp.com/channel/0029Vb75VQWA2pL9MTcaeQ31";
+
+function makeSakura(){
+  const layer=document.getElementById("sakura");
+  for(let i=0;i<24;i++){
+    const p=document.createElement("span");
+    p.className="petal";
+    p.style.left=(Math.random()*100)+"%";
+    p.style.animationDuration=(7+Math.random()*8)+"s";
+    p.style.animationDelay=(-Math.random()*12)+"s";
+    p.style.transform="scale("+(0.55+Math.random()*0.8)+")";
+    layer.appendChild(p);
+  }
+}
+makeSakura();
+
+function createLink(){
+  const name=document.getElementById("linkName").value.trim();
+  const target=document.getElementById("targetLink").value.trim();
+  const result=document.getElementById("result");
+
+  if(!name||!target){alert("Nama dan link harus diisi.");return}
+  try{new URL(target)}catch{alert("Link tidak valid. Contoh: https://google.com");return}
+
+  const generated=window.location.origin+window.location.pathname+
+    "?name="+encodeURIComponent(name)+"&url="+encodeURIComponent(target);
+
+  window.generatedLink=generated;
+  result.innerHTML='<div class="copy-box"><b>Link berhasil dibuat</b><br><br>'+generated+'</div>'+
+    '<button class="secondary" onclick="copyLink()">Salin Link</button>';
+}
+
+function copyLink(){
+  navigator.clipboard.writeText(window.generatedLink)
+  .then(()=>alert("Link berhasil disalin!"))
+  .catch(()=>alert("Gagal menyalin link."));
+}
+
+const params=new URLSearchParams(window.location.search);
+const name=params.get("name");
+const target=params.get("url");
+
+if(name&&target){
+  document.getElementById("generator").classList.add("hidden");
+  document.getElementById("adPopup").classList.remove("hidden");
+}
+
+function skipAd(){
+  document.getElementById("adPopup").classList.add("hidden");
+  startCooldown();
+}
+
+function startCooldown(){
+  document.getElementById("cooldown").classList.remove("hidden");
+  document.getElementById("welcomeText").textContent='Link "'+name+'" sedang disiapkan...';
+
+  let time=5;
+  const timer=document.getElementById("timer");
+  const status=document.getElementById("status");
+  timer.textContent=time;
+
+  const countdown=setInterval(()=>{
+    time--;
+    timer.textContent=time;
+    if(time<=0){
+      clearInterval(countdown);
+      timer.textContent="✓";
+      status.textContent="Mengalihkan ke link...";
+      setTimeout(()=>{window.location.href=target},500);
+    }
+  },1000);
+}
+</script>
+</body>
+</html>
