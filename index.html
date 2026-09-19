@@ -1,8 +1,0 @@
-<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Rafzz Admin • Buat Link</title>
-<style>
-body{margin:0;background:#f4f4f4;font-family:Arial;color:#111}.box{width:min(600px,92%);margin:40px auto;background:#fff;padding:25px;border-radius:22px;box-shadow:0 15px 50px #0001}h1{margin-top:0}label{display:block;font-weight:bold;margin:15px 0 7px}input{width:100%;box-sizing:border-box;padding:14px;border:1px solid #ddd;border-radius:12px;font-size:15px}button{width:100%;padding:14px;margin-top:17px;background:#111;color:#fff;border:0;border-radius:12px;font-weight:bold}.result{margin-top:18px;background:#f2f2f2;padding:15px;border-radius:14px;word-break:break-all}small{color:#777}
-</style></head><body><div class="box"><h1>Rafzz Official — Buat Link</h1><small>Halaman ini sengaja dipisahkan dari halaman publik.</small><label>Nama Link</label><input id="n" placeholder="Contoh: Download Anime X"><label>URL Tujuan</label><input id="u" placeholder="https://contoh.com"><button onclick="make()">Buat Link</button><div id="r"></div></div>
-<script>
-function enc(o){return btoa(unescape(encodeURIComponent(JSON.stringify(o))))}
-function make(){let n=document.getElementById("n").value.trim()||"Rafzz Link",u=document.getElementById("u").value.trim();if(!/^https?:\/\/\S+/i.test(u))return alert("Masukkan URL http/https");let x=location.origin+"/#go="+enc({n,u});document.getElementById("r").innerHTML='<div class="result"><b>Link:</b><br>'+x+'<br><br><button onclick="navigator.clipboard.writeText(\''+x.replace(/'/g,"\\'")+'\');alert(\'Disalin!\')">Salin</button></div>'}
-</script></body></html>
